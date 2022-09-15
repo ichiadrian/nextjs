@@ -1,5 +1,12 @@
 # Object file
 *.o
+.gitignore
 
 # Ada Library Information
 *.ali
+.vscode
+.next
+node_modules
+config.json
+package-lock.json
+package.json
