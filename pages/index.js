@@ -1,10 +1,12 @@
 import React from 'react';
+import IndexPage from '../components/Dashboard/indexPages';
 
 class index extends React.Component {
     
     render(){
         return(
-            "Hello world"
+            
+            <IndexPage isGlobal={true}/>
         )
     }
 }
