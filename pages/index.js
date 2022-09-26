@@ -5,8 +5,10 @@ class index extends React.Component {
     
     render(){
         return(
-            
-            <IndexPage isGlobal={true}/>
+            <>
+                        <IndexPage isGlobal={true}/>
+
+            </>
         )
     }
 }
