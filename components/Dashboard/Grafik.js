@@ -1,5 +1,7 @@
 import React from "react";
 import { Line, Pie } from "react-chartjs-2";
+import NumberFormat from "react-number-format";
+const {sum} = require ("../../util/library.js")
 
 
 const Grafik = (props) => {
@@ -36,7 +38,7 @@ const Grafik = (props) => {
         }
     }
 
-    let dataDunia = [20000, 12000, 300]
+    let dataDunia = [sum("Confirmed", props), sum("Recovered", props), sum("Deaths", props)]
 
     const dataPie = {
         labels : ["Positif", "Sembuh", "Meninggal"],
@@ -80,17 +82,17 @@ const Grafik = (props) => {
                             <div className="row mt-6">
                                 <div className="col text-center">
                                     <h5 className="font-weight-normal mt-2">POSITIF</h5>
-                                    <h3 className="mb-1">20.000</h3>
+                                    <h3 className="mb-1"><NumberFormat value={sum('Confirmed', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h3>
                                     <p className="mb-0 text-muted"><span className="text-lg font-weight-700">ORANG</span></p>
                                 </div>
                                 <div className="col text-center">
                                     <h5 className="font-weight-normal mt-2">SEMBUH</h5>
-                                    <h3 className="mb-1">12.000</h3>
+                                    <h3 className="mb-1"><NumberFormat value={sum('Recovered', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h3>
                                     <p className="mb-0 text-muted"><span className="text-lg font-weight-700">ORANG</span></p>
                                 </div>
                                 <div className="col text-center">
                                     <h5 className="font-weight-normal mt-2">MENINGGAL</h5>
-                                    <h3 className="mb-1">300</h3>
+                                    <h3 className="mb-1"><NumberFormat value={sum('Deaths', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h3>
                                     <p className="mb-0 text-muted"><span className="text-lg font-weight-700">ORANG</span></p>
                                 </div>
                             </div>

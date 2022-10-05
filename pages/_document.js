@@ -8,6 +8,8 @@ class MyDocument extends Document {
         return { ...initialProps }
     }
 
+    //Custome Dokumen untuk memanggil index.js dan script next.js
+
     render() {
         return (
             <Html>

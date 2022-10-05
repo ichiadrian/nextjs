@@ -50,3 +50,26 @@ export const sum = function (key, props) {
         }
     }
 }
+
+export const getAllMonth = function(props) {
+    const monthEng = ['Jan', 'Feb', 'Mar', "Apr" , "Jun", "Jul" , "Aug", "Sep", "Nov", "Des"];
+    let nowDate = new Date();
+    let day = null;
+    let month = null;
+    let years = null;
+    let label = [];
+    let positif = [];
+    let sembuh = [];
+    let meninggal = [];
+    let active = [];
+    let data = [];
+
+    for (let value of props.statistik) {
+        nowDate = new Date(value.date)
+        day = nowDate.getDate();
+        month = nowDate.getMonth();
+        years = nowDate.getFullYear();  
+        label.push(day + " " + monthEng [<Math.abs(month)]);   
+    }
+
+}
