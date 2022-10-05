@@ -1,4 +1,9 @@
+import NumberFormat from "react-number-format";
+// const sum = require("../../util/library")
+const { sum } = require("../../util/library")
+
 const CardStatus = (props) => {
+    console.log("LEMPARAN DATA",props);
     return (
         <div className="row mt-3 ml-1 mr-1 mb-2">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-3">
@@ -7,7 +12,8 @@ const CardStatus = (props) => {
                         <div className="d-flex">
                             <div className="text-white">
                                 <p className="text-white mb-0">TOTAL POSITIF</p>
-                                <h2 className="mb-0 number-font">20.000</h2>
+                                {/* <h2 className="mb-0 number-font">{props.data.jumlah_positif}</h2> */}
+                                <h2 className="mb-0 number-font"><NumberFormat value={sum('Confirmed', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h2>
                                 <p className="mb-0 text-white">ORANG</p>
                             </div>
                         <div className="m-auto">
@@ -23,7 +29,7 @@ const CardStatus = (props) => {
                         <div className="d-flex">
                             <div className="text-white">
                                 <p className="text-white mb-0">TOTAL SEMBUH</p>
-                                <h2 className="mb-0 number-font">12.000</h2>
+                                <h2 className="mb-0 number-font"><NumberFormat value={sum('Recovered', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h2>
                                 <p className="mb-0 text-white">ORANG</p>
                             </div>
                         <div className="m-auto">
@@ -39,7 +45,7 @@ const CardStatus = (props) => {
                         <div className="d-flex">
                             <div className="text-white">
                                 <p className="text-white mb-0">TOTAL MENINGGAL</p>
-                                <h2 className="mb-0 number-font">300</h2>
+                                <h2 className="mb-0 number-font"><NumberFormat value={sum('Deaths', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h2>
                                 <p className="mb-0 text-white">ORANG</p>
                             </div>
                         <div className="m-auto">
@@ -55,7 +61,7 @@ const CardStatus = (props) => {
                         <div className="d-flex">
                             <div className="text-white">
                                 <p className="text-white mb-0">TOTAL ACTIVE</p>
-                                <h2 className="mb-0 number-font">7.700</h2>
+                                <h2 className="mb-0 number-font"><NumberFormat value={sum('Active', props)} displayType={'text'} thousandSeparator={","} decimalSeparator={"."} defaultValue={0}/></h2>
                                 <p className="mb-0 text-white">ORANG</p>
                             </div>
                         <div className="m-auto">

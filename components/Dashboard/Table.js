@@ -46,7 +46,7 @@ const Table = (props) => {
                             </div>
                         </div> */}
 
-                        <table class="table table-striped">
+                        <table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th>No.</th>
