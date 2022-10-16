@@ -1,7 +1,7 @@
 import React from "react";
 import { Line, Pie } from "react-chartjs-2";
 import NumberFormat from "react-number-format";
-const {sum} = require ("../../util/library.js")
+const {sum, getAllMonth} = require ("../../util/library.js")
 
 
 const Grafik = (props) => {
@@ -9,9 +9,13 @@ const Grafik = (props) => {
     let data = null;
 
     if (!props.isGlobal) {
-        dataCovid = [2, 2, 2, 2, 4, 4, 6, 19, 27, 34 ];
+        // dataCovid = [2, 2, 2, 2, 4, 4, 6, 19, 27, 34 ];
+        dataCovid = getAllMonth(props);
+
+        console.log("ambil bulan",dataCovid );
         data = {
-            labels : ["1 Mar", "2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar" ],
+            // labels : ["1 Mar", "2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar" ],
+            labels : dataCovid.label,
             datasets : [
                 {
                     label : "Jumlah Positif",
@@ -32,7 +36,70 @@ const Grafik = (props) => {
                     pointBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-                    data: dataCovid
+                    data: dataCovid.positif
+                },
+                {
+                    label : "Jumlah Sembuh",
+                    fill : false,
+                    lineTension : 0.1,
+                    backgroundColor : 'rgba(75 ,192 , 192 , 0.4)',
+                    borderColor : 'rgba(75, 192, 192, 1)',
+                    borderCapStyle : 'butt',
+                    borderDash : [],
+                    borderDashOffset : 0.0,
+                    borderJoinStyle : 'miter',
+                    pointBorderColor : 'rgba(75, 192, 192, 1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth : 1,
+                    pointHoverRadius : 10,
+                    pointHoverBackgroundColor : 'rgba(75, 192, 192, 1)',
+                    pointHoverBorderColor : 'rgba(220, 220, 220, 1)',
+                    pointBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: dataCovid.sembuh
+                },
+                {
+                    label : "Jumlah Meninggal",
+                    fill : false,
+                    lineTension : 0.1,
+                    backgroundColor : 'rgba(0, 0, 0 , 0.4)',
+                    borderColor : 'rgba(0, 0, 0, 1)',
+                    borderCapStyle : 'butt',
+                    borderDash : [],
+                    borderDashOffset : 0.0,
+                    borderJoinStyle : 'miter',
+                    pointBorderColor : 'rgba(0, 0, 0, 1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth : 1,
+                    pointHoverRadius : 10,
+                    pointHoverBackgroundColor : 'rgba(0, 0, 0, 1)',
+                    pointHoverBorderColor : 'rgba(220, 220, 220, 1)',
+                    pointBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: dataCovid.meninggal
+                },
+                {
+                    label : "Jumlah Active",
+                    fill : false,
+                    lineTension : 0.1,
+                    backgroundColor : 'rgba(232, 243, 16 , 0.4)',
+                    borderColor : 'rgba(232, 243, 16 , 1)',
+                    borderCapStyle : 'butt',
+                    borderDash : [],
+                    borderDashOffset : 0.0,
+                    borderJoinStyle : 'miter',
+                    pointBorderColor : 'rgba(232, 243, 16 , 1)',
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth : 1,
+                    pointHoverRadius : 10,
+                    pointHoverBackgroundColor : 'rgba(232, 243, 16 , 1)',
+                    pointHoverBorderColor : 'rgba(220, 220, 220, 1)',
+                    pointBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: dataCovid.active
                 }
             ]
         }

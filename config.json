@@ -9,7 +9,7 @@
     },
     "global-api" : {
         "base_url" : "https://api.covid19api.com",
-        "total_live" : "/live/country/indonesia/status/confirmed"
+        "total_live" : "/live/country/indonesia"
     },
     "api-indonesia" : {
         "base_url" : "https://data.covid19.go.id/public/api/update.json"
