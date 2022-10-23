@@ -17,17 +17,23 @@ class index extends React.Component {
     static async getInitialProps(){
         const data = await fetch(`${config["api-global-new"].base_url}`);
         const items = await data.json(); //merubah data ke bentuk JSON
+
+
+        const dataTab = await fetch(`${config["global-api"].base_url}${config["global-api"].summary}`);
+        const statGlobal = await dataTab.json();
+
         return{
             items,
+            statGlobal
         }
     }
 
     render(){
-        const {items} = this.props;
-        // console.log(items);
+        const {items, statGlobal} = this.props;
+        // console.log(statGlobal);
         return(
             <>
-                        <IndexPage isGlobal={true} data ={items}/>
+                        <IndexPage isGlobal={true} data ={items} dataGlobal={statGlobal}/>
 
             </>
         )

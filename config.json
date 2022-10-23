@@ -3,19 +3,22 @@
         "version" : "1.0"
     },
     "kawal-corona" : {
-        "base_url"  : "https://api.kawalcorona.com",
-        "indonesia" : "/indonesia",
-        "provinsi"  : "/provinsi"
+        "base_url"  :   "https://api.kawalcorona.com",
+        "indonesia" :   "/indonesia",
+        "provinsi"  :   "/provinsi"
     },
     "global-api" : {
-        "base_url" : "https://api.covid19api.com",
-        "total_live" : "/live/country/indonesia"
+        "base_url" :    "https://api.covid19api.com/",
+        "total_live" :  "live/country/indonesia",
+        "summary" :     "summary"
     },
     "api-indonesia" : {
-        "base_url" : "https://data.covid19.go.id/public/api/update.json"
+        "base_url" :    "https://data.covid19.go.id/public/api",
+        "prov" :        "/prov.json",
+        "update" :      "/update.json"
 
     },
     "api-global-new" : {
-        "base_url" : "https://disease.sh/v3/covid-19/all"
+        "base_url" :    "https://disease.sh/v3/covid-19/all"
     }
 }

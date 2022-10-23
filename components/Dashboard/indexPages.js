@@ -15,7 +15,7 @@ function IndexPage(props) {
         overflowX: "hidden"
     }
 
-    console.log("data", props);
+    // console.log("data", props.dataGlobal);
 
     return (
         <div style={{ backgroundColor: "#f1f1f9" }}>
@@ -36,7 +36,7 @@ function IndexPage(props) {
                 <CardStatus isGlobal={props.isGlobal} data={props.data ? props.data : null } />
 
                 <Grafik isGlobal = {props.isGlobal} data={props.data ? props.data : null } statistik={props.statistik ? props.statistik : null}/>
-                <Table isGlobal = {props.isGlobal} />
+                <Table isGlobal = {props.isGlobal} data2={props.data2 ? props.data2: null } data={props.dataGlobal ? props.dataGlobal : null } />
             </div>
             
 

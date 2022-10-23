@@ -1,5 +1,7 @@
 
 const Table = (props) => {
+
+    console.log(props.data);
     return (
         <div className="row mb-5">
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -58,21 +60,38 @@ const Table = (props) => {
                             </thead>
                             <tbody>
                                 {props.isGlobal ?
-                                    <tr>
-                                        <th>1.</th>
-                                        <td>United State</td>
-                                        <td>3.000.000</td>
-                                        <td>1.000.000</td>
-                                        <td>250.000</td>
-                                    </tr>
+
+                                    (props.data.Countries && props.data.Countries.map((item, index) => {
+
+                                        // console.log(index);
+                                        return(
+                                            <tr key={index}>
+                                            <th>{index + 1}</th>
+                                            <td>{item.Country}</td>
+                                            <td>{item.TotalConfirmed}</td>
+                                            <td>{item.TotalRecovered}</td>
+                                            <td>{item.TotalDeaths}</td>
+                                        </tr>
+                                        )
+                                    })
+                                    )
+                                        
+                                   
                                     :
-                                    <tr>
-                                        <th>1.</th>
-                                        <td>Jawa Timur</td>
-                                        <td>3.000.000</td>
-                                        <td>1.000.000</td>
-                                        <td>400</td>
-                                    </tr>
+
+                                    (props.data2 && props.data2.map((items, index)=> {
+                                        return(
+                                            <tr key={index}>
+                                            <th>{index + 1}</th>
+                                            <td>{items.key}</td>
+                                            <td>{items.jumlah_kasus}</td>
+                                            <td>{items.jumlah_sembuh}</td>
+                                            <td>{items.jumlah_meninggal}</td>
+                                        </tr>
+                                        )
+                                    })
+                                    )
+                                  
 
                                 }
                             </tbody>

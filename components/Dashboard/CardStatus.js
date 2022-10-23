@@ -3,7 +3,7 @@ import NumberFormat from "react-number-format";
 const { sum } = require("../../util/library")
 
 const CardStatus = (props) => {
-    console.log("LEMPARAN DATA",props);
+    // console.log("LEMPARAN DATA",props);  
     return (
         <div className="row mt-3 ml-1 mr-1 mb-2">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-3">
